@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    	<title>xtrasafe</title>
+
+		<link rel="shortcut icon" type="image/png" href="Extrasafe Portable/img/favicon.png"/>
+    	<!-- Loading Bootstrap -->
+    	<link href="Extrasafe Portable/libs/css/bootstrap.min.css" rel="stylesheet">
+
+    	<!-- Loading Flat UI -->
+    	<link href="Extrasafe Portable/libs/css/flat-ui.css" rel="stylesheet">
+    	<link href="Extrasafe Portable/css/index.css" rel="stylesheet">
+  	</head>
+	<body>
+	<div id="app">
+        <div id="home-page" data-role="page">
+            <div data-role="content" >
+
+		    	<div id="logoContainer" class="center-text">
+		            <img src="Extrasafe Portable/img/logo.png" id="logo"></img>
+		       	</div>
+
+		        <div id="recommend" class="center-text">This site saves your Extrasafe options and site names, for best user experience.<br>But, we recommend you to <input type="button" id="clear" value="CLEAR"></input> the storage every time you get out of this site.</div>
+			</div>
+
+			<div class="form-group center-text">
+				<label for="site-url">Site Url</label>
+				<div id="scrollable-dropdown-menu">
+				<input class="typeahead form-control" id="site-url" data-mini="true" type="text" placeholder="">
+				</div>
+				<div style="display:none" class="errors"></div>
+			</div>
+
+			<div class="form-group center-text">
+				<label for="master-password">Master Password</label>
+				<input type="password" class="form-control" id="master-password" data-mini="true"/>
+				<img id="show-password" src="Extrasafe Portable/img/Unmask16.png"></img></br>
+				<div style="display:none" class="errors"></div>
+			</div>
+
+			<div class="form-group center-text">
+				<img id="generate-button" src="Extrasafe Portable/img/generate.png" class="disable" title="Generate"></img>
+			</div>
+
+			<div class="form-group center-text">
+				<label for="site-password">Site Password</label>
+				<input type="text" class="form-control" readonly id="site-password" data-mini="true"/>
+			</div>
+
+			<div id="options-button" class="my-button">
+				<a class="btn btn-block btn-lg btn-info" href="options.html"><span class="fui-gear"></span> Options</a>
+			</div>
+
+			<div id="about-button" class="my-button">
+	  			<a class="btn btn-block btn-lg btn-default" href="about.html"><span class="fui-cmd"></span> About</a>
+			</div>
+        </div>
+        <div id="tooltip" style="display:none"></div>
+	</div>
+
+	<script type="text/javascript" src="Extrasafe Portable/libs/js/jquery.min.js"></script>
+    <script type="text/javascript" src="Extrasafe Portable/libs/js/sha3.js"></script>
+    <script type="text/javascript" src="Extrasafe Portable/js/hasher.js"></script>
+    <script type="text/javascript" src="Extrasafe Portable/js/portable.js"></script>
+    <!--<script type="text/javascript" src="phonegap.js"></script>-->
+
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+    </body>
+</html>

@@ -1,18 +1,26 @@
+<!--
+/*******************************************************************************************
+Just Remember one Master Password text, Extrasafe takes care of the rest ;)
+Extrasafe (C) 2014-2015  The Extra Labs
+GNU General Public License v3
+http://theextralabs.com
+********************************************************************************************/
+-->
 <!DOCTYPE html>
 <html>
 	<head>
     	<meta charset="utf-8">
 		<meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, user-scalable=no">
-    	<title>xtrasafe</title>
+    	<title>xtrasafe | The Extra Labs</title>
 
-		<link rel="shortcut icon" type="image/png" href="Extrasafe Portable/img/favicon.png"/>
+		<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     	<!-- Loading Bootstrap -->
-    	<link href="Extrasafe Portable/libs/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="libs/css/bootstrap.min.css" rel="stylesheet">
 
     	<!-- Loading Flat UI -->
-    	<link href="Extrasafe Portable/libs/css/flat-ui.css" rel="stylesheet">
-    	<link href="Extrasafe Portable/css/index.css" rel="stylesheet">
+    	<link href="libs/css/flat-ui.css" rel="stylesheet">
+    	<link href="css/index.css" rel="stylesheet">
   	</head>
 	<body>
 	<div id="app">
@@ -20,29 +28,41 @@
             <div data-role="content" >
 
 		    	<div id="logoContainer" class="center-text">
-		            <img src="Extrasafe Portable/img/logo.png" id="logo"></img>
+		            <img src="img/logo.png" id="logo"></img>
 		       	</div>
 
-		        <div id="recommend" class="center-text">This site saves your Extrasafe options and site names, for best user experience.<br>But, we recommend you to <input type="button" id="clear" value="CLEAR"></input> the storage every time you get out of this site.</div>
-			</div>
+		        <!-- <div id="recommend" class="center-text">This site saves your Extrasafe options and site names, for best user experience.<br>But, we recommend you to <input type="button" id="clear" value="CLEAR"></input> the storage every time you get out of this site.</div>
+			</div> -->
 
 			<div class="form-group center-text">
-				<label for="site-url">Site Url</label>
+				<label>Site Url</label>
 				<div id="scrollable-dropdown-menu">
-				<input class="typeahead form-control" id="site-url" data-mini="true" type="text" placeholder="">
+				<input class="typeahead form-control" id="site-url" data-mini="true" type="text">
 				</div>
 				<div style="display:none" class="errors"></div>
+				<div style="display:none" class="goahead"></div>
 			</div>
 
 			<div class="form-group center-text">
-				<label for="master-password">Master Password</label>
+				<label for="profiles">Profiles</label>
+				<br>
+                <div class="btn-group">
+                  <a class="btn btn-primary active"><span class="profile-name" id="profile-personal">Personal</span></a>
+                  <a class="btn btn-primary"><span class="profile-name" id="profile-official">Official</span></a>
+                  <a class="btn btn-primary"><span class="profile-name" id="profile-default">Default</span></a>
+                 </div>
+                </div>
+            </div>
+
+			<div class="form-group center-text">
+				<label>Master Password</label>
 				<input type="password" class="form-control" id="master-password" data-mini="true"/>
-				<img id="show-password" src="Extrasafe Portable/img/Unmask16.png"></img></br>
+				<img id="show-password" src="img/Unmask16.png"></img></br>
 				<div style="display:none" class="errors"></div>
 			</div>
 
 			<div class="form-group center-text">
-				<img id="generate-button" src="Extrasafe Portable/img/generate.png" class="disable" title="Generate"></img>
+				<img id="generate-button" class="disable" src="img/generate.png" title="Generate"></img>
 			</div>
 
 			<div class="form-group center-text">
@@ -51,7 +71,7 @@
 			</div>
 
 			<div id="options-button" class="my-button">
-				<a class="btn btn-block btn-lg btn-info" href="options.html"><span class="fui-gear"></span> Options</a>
+				<a class="btn btn-block btn-lg btn-info" href="options.html"><span class="fui-gear"></span> Options<span id="default-options"><br>[You are using default options]</span></a>
 			</div>
 
 			<div id="about-button" class="my-button">
@@ -61,11 +81,11 @@
         <div id="tooltip" style="display:none"></div>
 	</div>
 
-	<script type="text/javascript" src="Extrasafe Portable/libs/js/jquery.min.js"></script>
-    <script type="text/javascript" src="Extrasafe Portable/libs/js/sha3.js"></script>
-    <script type="text/javascript" src="Extrasafe Portable/js/hasher.js"></script>
-    <script type="text/javascript" src="Extrasafe Portable/js/portable.js"></script>
-    <!--<script type="text/javascript" src="phonegap.js"></script>-->
+	<script type="text/javascript" src="libs/js/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/js/sha3.js"></script>
+    <script type="text/javascript" src="js/hasher.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
 
     <script type="text/javascript">
         app.initialize();
